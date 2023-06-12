@@ -1,0 +1,6 @@
+
+#!/bin/bash
+
+# Read the file from command line argument
+log_file=$1
+awk 'BEGIN { FS="\t" } NR>1 { hosts[$1]++ } END { for (host in hosts) print host }' "$log_file" | sort | head -n 11
