@@ -1,2 +1,2 @@
 #!/bin/bash
-while read l; do printf "%s" "${l:0:1}"; done && printf "\n"
+cut -c1 "${1:-/dev/stdin}" | paste -s -d ''
